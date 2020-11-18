@@ -16,6 +16,14 @@ entities:
   - location
   - facility_type
 
+slots:
+  location:
+    type: text
+  facility_type:
+    type: text
+  address:
+    type: unfeaturized
+
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -38,6 +46,11 @@ responses:
 
   utter_ask_location:
   - text: "Can you provide your location please?"
+  - text: "To find a {facility_type}, I need your address."
+
+actions:
+  - action_facility_search
+  
 
 session_config:
   session_expiration_time: 60
